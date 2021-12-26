@@ -5,11 +5,29 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
+const SIZES = {
+  small: {
+    '--height': 8 + 'px',
+    '--borderRadius': 4 + 'px',
+    '--padding': 0,
+  },
+  medium: {
+    '--height': 12 + 'px',
+    '--borderRadius': 4 + 'px',
+    '--padding': 0,
+  },
+  large: {
+    '--height': 24 + 'px',
+    '--borderRadius': 8 + 'px',
+    '--padding': 4 + 'px',
+  },
+};
+
 const ProgressBarContainer = styled.div`
   width: 370px;
-  height: 24px;
-  border-radius: 8px;
-  padding: 4px;
+  height: var(--height);
+  border-radius: var(--borderRadius);
+  padding: var(--padding);
 
   background: ${COLORS.transparentGray15};
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
@@ -24,8 +42,15 @@ const ProgressBarValue = styled.div`
 `;
 
 const ProgressBar = ({ value, size }) => {
+  const styles = SIZES[size];
+
   return (
-    <ProgressBarContainer role="progressbar" aria-valuenow={value} aria-valuemin="0" aria-valuemax="100">
+    <ProgressBarContainer 
+      style={styles} 
+      role="progressbar" 
+      aria-valuenow={value} 
+      aria-valuemin="0" 
+      aria-valuemax="100">
       <ProgressBarValue progress={value} />
     </ProgressBarContainer>
   );
