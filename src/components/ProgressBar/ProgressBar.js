@@ -51,7 +51,9 @@ const ProgressBar = ({ value, size }) => {
       aria-valuenow={value} 
       aria-valuemin="0" 
       aria-valuemax="100">
-      <ProgressBarValue progress={value} />
+      <ProgressBarValue progress={value}>
+        <VisuallyHidden>{value}%</VisuallyHidden>
+      </ProgressBarValue>
     </ProgressBarContainer>
   );
 };
