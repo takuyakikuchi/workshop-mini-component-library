@@ -10,28 +10,35 @@ const Wrapper = styled.div`
   width: max-content;
 `;
 
-const StyledSelect = styled.select`
-  appearance: none;
-  border: none;
+const NativeSelect = styled.select`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 
-  height: 43px;
-  width: 191px;
-  border-radius: 8px;
-  padding: 12px 16px;
+  // Hide the native select
+  opacity: 0;
+`;
   
+const PresentationBit = styled.div`
   background: ${COLORS.transparentGray15};
   color: ${COLORS.gray700};
   font-size: 1rem;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  padding-right: 52px;
 `;
 
 const IconWrapper = styled.div`
   position: absolute;
+  right: 16px;
+  // Center the icon
   top: 0;
   bottom: 0;
-  right: 16px;
   margin: auto;
   height: fit-content;
-  color: ${COLORS.gray700};
 `;
 
 const Select = ({ label, value, onChange, children }) => {
@@ -39,12 +46,15 @@ const Select = ({ label, value, onChange, children }) => {
 
   return (
     <Wrapper>
-      <StyledSelect value={value} onChange={onChange}>
+      <NativeSelect value={value} onChange={onChange}>
         {children}
-      </StyledSelect>
-      <IconWrapper>
-        <Icon id="chevron-down" size={12} strokeWidth={2}/>
-      </IconWrapper>
+      </NativeSelect>
+      <PresentationBit>
+        {displayedValue}
+        <IconWrapper>
+          <Icon id="chevron-down" size={12} strokeWidth={2}/>
+        </IconWrapper>
+      </PresentationBit>
     </Wrapper>
   );
 };
