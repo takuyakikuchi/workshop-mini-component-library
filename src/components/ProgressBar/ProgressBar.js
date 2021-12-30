@@ -44,6 +44,10 @@ const ProgressBarValue = styled.div`
 const ProgressBar = ({ value, size }) => {
   const styles = SIZES[size];
 
+  if (!styles) {
+    throw new Error(`Invalid size: ${size}`);
+  }
+
   return (
     <ProgressBarContainer 
       style={styles} 
