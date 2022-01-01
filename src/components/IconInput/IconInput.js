@@ -40,6 +40,12 @@ const NativeInput = styled.input`
 
   &:focus {
     outline-offset: 4px;
+    border-bottom: 2px solid ${COLORS.black};
+  }
+
+  &:hover {
+    color: ${COLORS.black};
+    border-bottom: 2px solid ${COLORS.black};
   }
 `;
 
