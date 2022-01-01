@@ -8,16 +8,16 @@ import VisuallyHidden from '../VisuallyHidden';
 
 const SIZES = {
   small: {
-    iconSize: 16,
+    iconSize: 16 + 'px',
     '--fontSize': (14 / 16) + 'rem',
     '--borderWidth': 1 + 'px',
-    '--paddingLeft': 24 + 'px',
+    '--dimension': 24 + 'px',
   },
   large: {
-    iconSize: 24,
+    iconSize: 24 + 'px',
     '--fontSize': (18 / 16) + 'rem',
     '--borderWidth': 2 + 'px',
-    '--paddingLeft': 36 + 'px',
+    '--dimension': 36 + 'px',
   },
 }
 
@@ -52,12 +52,12 @@ const IconInput = ({
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
+  height: var(--dimension);
 `;
 
 const NativeInput = styled.input`
-  padding: 4px;
   /* Leave space for icon */
-  padding-left: var(--paddingLeft);
+  padding-left: var(--dimension);
 
   border: none;
   border-bottom: solid ${COLORS.black};
@@ -78,8 +78,10 @@ const NativeInput = styled.input`
 
 const IconWrapper = styled.div`
   position: absolute;
-  top: 4px;
-  left: 1px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: fit-content;
 
   pointer-events: none;
 `;
