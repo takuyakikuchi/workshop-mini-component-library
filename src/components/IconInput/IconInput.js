@@ -29,11 +29,9 @@ const Wrapper = styled.div`
 `;
 
 const NativeInput = styled.input`
-  padding: 0;
-  padding-right: 4px;
-  padding-bottom: 4px;
+  padding: 4px;
   /* Leave space for icon */
-  padding-left: 16px;
+  padding-left: 40px;
 
   border: none;
   border-bottom: 1px solid ${COLORS.black};
@@ -43,8 +41,10 @@ const NativeInput = styled.input`
 
 const IconWrapper = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4px;
+  left: 1px;
+
+  pointer-events: none;
 `;
 
 export default IconInput;
