@@ -44,7 +44,7 @@ const PresentationBit = styled.div`
 
 const IconWrapper = styled.div`
   position: absolute;
-  right: 16px;
+  right: 10px;
 
   // Center the icon
   top: 0;
@@ -66,7 +66,7 @@ const Select = ({ label, value, onChange, children }) => {
       <PresentationBit>
         {displayedValue}
         <IconWrapper>
-          <Icon id="chevron-down" size={12} strokeWidth={2}/>
+          <Icon id="chevron-down" size={24} strokeWidth={1}/>
         </IconWrapper>
       </PresentationBit>
     </Wrapper>
