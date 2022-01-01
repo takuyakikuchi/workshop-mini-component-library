@@ -11,11 +11,13 @@ const SIZES = {
     iconSize: 16,
     '--fontSize': (14 / 16) + 'rem',
     '--borderWidth': 1 + 'px',
+    '--paddingLeft': 24 + 'px',
   },
   large: {
     iconSize: 24,
     '--fontSize': (18 / 16) + 'rem',
     '--borderWidth': 2 + 'px',
+    '--paddingLeft': 36 + 'px',
   },
 }
 
@@ -39,10 +41,10 @@ const IconInput = ({
       <NativeInput 
         type="text" 
         id={label} 
-        name={label} 
+        name={label}
+        style={styles}
         placeholder={placeholder} 
-        width={width}
-        style={styles}/>
+        />
     </Wrapper>
   );
 };
@@ -55,7 +57,7 @@ const Wrapper = styled.div`
 const NativeInput = styled.input`
   padding: 4px;
   /* Leave space for icon */
-  padding-left: 40px;
+  padding-left: var(--paddingLeft);
 
   border: none;
   border-bottom: solid ${COLORS.black};
