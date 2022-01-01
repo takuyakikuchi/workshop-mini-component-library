@@ -31,7 +31,9 @@ const PresentationBit = styled.div`
   padding-right: 52px;
 
   ${NativeSelect}:focus + & {
+    // Fallback
     outline: 1px dotted #212121;
+    // Adding the default focus style
     outline: 5px auto -webkit-focus-ring-color;
   }
 
@@ -43,11 +45,14 @@ const PresentationBit = styled.div`
 const IconWrapper = styled.div`
   position: absolute;
   right: 16px;
+
   // Center the icon
   top: 0;
   bottom: 0;
   margin: auto;
   height: fit-content;
+
+  pointer-events: none;
 `;
 
 const Select = ({ label, value, onChange, children }) => {
