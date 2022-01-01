@@ -17,8 +17,11 @@ const NativeSelect = styled.select`
   height: 100%;
   width: 100%;
 
-  // Hide the native select
+  /* Hide the native select */
   opacity: 0;
+
+  /* Allow the select to span the full height in Safari */
+  -webkit-appearance: none;
 `;
   
 const PresentationBit = styled.div`
