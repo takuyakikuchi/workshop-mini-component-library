@@ -6,6 +6,19 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
+const SIZES = {
+  small: {
+    iconSize: 16,
+    '--fontSize': (14 / 16) + 'rem',
+    '--borderWidth': 1 + 'px',
+  },
+  large: {
+    iconSize: 24,
+    '--fontSize': (18 / 16) + 'rem',
+    '--borderWidth': 2 + 'px',
+  },
+}
+
 const IconInput = ({
   label,
   icon,
@@ -13,15 +26,23 @@ const IconInput = ({
   size,
   placeholder,
 }) => {
+  const styles = SIZES[size];
+
   return (
     <Wrapper>
       <IconWrapper>
-        <Icon id={icon} size={16}/>
+        <Icon id={icon} size={styles.iconSize}/>
       </IconWrapper>
       <label for={label}>
         <VisuallyHidden>{label}</VisuallyHidden>
       </label>
-      <NativeInput type="text" id={label} name={label} placeholder={placeholder} width={width}/>
+      <NativeInput 
+        type="text" 
+        id={label} 
+        name={label} 
+        placeholder={placeholder} 
+        width={width}
+        style={styles}/>
     </Wrapper>
   );
 };
@@ -37,18 +58,19 @@ const NativeInput = styled.input`
   padding-left: 40px;
 
   border: none;
-  border-bottom: 1px solid ${COLORS.black};
+  border-bottom: solid ${COLORS.black};
+  border-width: var(--borderWidth);
 
-  font-size: ${14 / 16}rem;
+  font-size: var(--fontSize);
 
   &:focus {
     outline-offset: 4px;
-    border-bottom: 2px solid ${COLORS.black};
+    border-width: 2px;
   }
 
   &:hover {
     color: ${COLORS.black};
-    border-bottom: 2px solid ${COLORS.black};
+    border-width: 2px;
   }
 `;
 
