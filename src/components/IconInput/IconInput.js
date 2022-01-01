@@ -14,9 +14,19 @@ const IconInput = ({
   placeholder,
 }) => {
   return (
-    <NativeInput type="text" id={label} name={label} placeholder={placeholder} width={width}/>
+    <Wrapper>
+      <IconWrapper>
+        <Icon id={icon} size={16}/>
+      </IconWrapper>
+      <NativeInput type="text" id={label} name={label} placeholder={placeholder} width={width}/>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  position: relative;
+  width: max-content;
+`;
 
 const NativeInput = styled.input`
   padding: 0;
@@ -27,6 +37,14 @@ const NativeInput = styled.input`
 
   border: none;
   border-bottom: 1px solid ${COLORS.black};
+
+  font-size: ${14 / 16}rem;
+`;
+
+const IconWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export default IconInput;
