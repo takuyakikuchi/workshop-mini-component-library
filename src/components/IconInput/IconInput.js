@@ -18,6 +18,9 @@ const IconInput = ({
       <IconWrapper>
         <Icon id={icon} size={16}/>
       </IconWrapper>
+      <label for={label}>
+        <VisuallyHidden>{label}</VisuallyHidden>
+      </label>
       <NativeInput type="text" id={label} name={label} placeholder={placeholder} width={width}/>
     </Wrapper>
   );
