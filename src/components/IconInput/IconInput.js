@@ -37,6 +37,10 @@ const NativeInput = styled.input`
   border-bottom: 1px solid ${COLORS.black};
 
   font-size: ${14 / 16}rem;
+
+  &:focus {
+    outline-offset: 4px;
+  }
 `;
 
 const IconWrapper = styled.div`
