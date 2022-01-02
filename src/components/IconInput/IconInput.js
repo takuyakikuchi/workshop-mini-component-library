@@ -52,10 +52,10 @@ const IconInput = ({
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
-  height: var(--dimension);
 `;
 
 const NativeInput = styled.input`
+  height: var(--dimension);
   /* Leave space for icon */
   padding-left: var(--dimension);
 
@@ -64,6 +64,10 @@ const NativeInput = styled.input`
   border-width: var(--borderWidth);
 
   font-size: var(--fontSize);
+
+  &::placeholder {
+    color: ${COLORS.gray300};
+  }
 
   &:focus {
     outline-offset: 4px;
@@ -77,11 +81,15 @@ const NativeInput = styled.input`
 `;
 
 const IconWrapper = styled.div`
+  height: var(--dimension);
+
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto 0;
   height: fit-content;
+
+  color: ${COLORS.gray700};
 
   pointer-events: none;
 `;
