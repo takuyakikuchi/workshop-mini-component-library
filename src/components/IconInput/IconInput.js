@@ -52,6 +52,11 @@ const IconInput = ({
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
+
+  &:hover {
+    color: ${COLORS.black};
+    border-width: 2px;
+  }
 `;
 
 const NativeInput = styled.input`
@@ -64,9 +69,12 @@ const NativeInput = styled.input`
   border-width: var(--borderWidth);
 
   font-size: var(--fontSize);
+  font-weight: 700;
+  color: ${COLORS.gray700};
 
   &::placeholder {
     color: ${COLORS.gray300};
+    font-weight: 400;
   }
 
   &:focus {
