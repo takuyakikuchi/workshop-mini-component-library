@@ -42,7 +42,10 @@ const IconInput = ({
         type="text" 
         id={label} 
         name={label}
-        style={styles}
+        style={{
+          '--width': width + 'px',
+          ...styles,
+        }}
         placeholder={placeholder} 
         />
     </Wrapper>
@@ -52,15 +55,12 @@ const IconInput = ({
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
-
-  &:hover {
-    color: ${COLORS.black};
-    border-width: 2px;
-  }
 `;
 
 const NativeInput = styled.input`
   height: var(--dimension);
+  width: var(--width);
+
   /* Leave space for icon */
   padding-left: var(--dimension);
 
